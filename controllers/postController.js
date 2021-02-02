@@ -1,13 +1,9 @@
 const asyncHandler = require("../middleware/async");
 const Post = require("../models/Post");
 
+// @desc    Get all posts
+// @route   GET /api/v1/post
+// @acces   Public
 exports.getAllPosts = asyncHandler(async (req, res, next) => {
-  try {
-    console.log("GET ALL POST");
-  } catch (error) {
-    console.log(err);
-    res.status(401).json({
-      err: "Token expirado o inválido",
-    });
-  }
+  res.status(200).json(res.advancedResults);
 });
